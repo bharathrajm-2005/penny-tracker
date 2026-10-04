@@ -21,6 +21,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of ExpenseService.
+ * Contains the core logic for managing expenses, including pagination and sorting,
+ * while ensuring users can only interact with their own data.
+ */
 @Service
 @AllArgsConstructor
 public class ExpenseServiceImpl implements ExpenseService {
@@ -30,6 +35,13 @@ public class ExpenseServiceImpl implements ExpenseService {
     private SecurityUtil securityUtil;
     private EntityMapper mapper;
 
+    /**
+     * Creates a new expense entry for the user. Verifies that the associated category
+     * either belongs to the user or is a global default category.
+     * 
+     * @param expenseDto Details of the expense.
+     * @return The persisted expense details.
+     */
     @Override
     public ExpenseDto createExpense(ExpenseDto expenseDto) {
         User user = securityUtil.getLoggedInUser();

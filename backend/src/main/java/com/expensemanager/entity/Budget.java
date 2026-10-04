@@ -5,6 +5,11 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
+/**
+ * Represents a budget configured by a user for a specific month and year.
+ * A budget can either be overall for the month (category is null) 
+ * or constrained to a specific expense category.
+ */
 @Entity
 @Table(name = "budgets")
 @Getter

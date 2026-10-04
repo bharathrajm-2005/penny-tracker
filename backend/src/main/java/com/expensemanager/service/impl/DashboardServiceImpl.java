@@ -23,6 +23,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of DashboardService.
+ * Handles the calculation of aggregate metrics like total expenses, remaining budget, 
+ * category-wise spending, and fetches recent transactions.
+ */
 @Service
 @AllArgsConstructor
 public class DashboardServiceImpl implements DashboardService {
@@ -33,6 +38,14 @@ public class DashboardServiceImpl implements DashboardService {
     private SecurityUtil securityUtil;
     private EntityMapper mapper;
 
+    /**
+     * Gathers all the data required to populate the user's dashboard for a specific month and year.
+     * Calculates total expenses, budget usage, and breaks down spending by category.
+     * 
+     * @param month The month to get data for.
+     * @param year The year to get data for.
+     * @return DashboardDto populated with various metrics and recent transactions.
+     */
     @Override
     public DashboardDto getDashboardData(Integer month, Integer year) {
         User user = securityUtil.getLoggedInUser();

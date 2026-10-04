@@ -10,6 +10,10 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Repository interface for CRUD operations on Expense entities.
+ * Provides custom queries for paginated retrieval, date-range filtering, and aggregating expense totals by category/time.
+ */
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, Long>, JpaSpecificationExecutor<Expense> {
     Page<Expense> findByUserId(Long userId, Pageable pageable);

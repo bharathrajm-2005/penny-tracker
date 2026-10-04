@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Repository interface for CRUD operations on Budget entities.
+ * Includes custom queries for retrieving user-specific budgets and aggregating total budget amounts.
+ */
 @Repository
 public interface BudgetRepository extends JpaRepository<Budget, Long> {
     List<Budget> findByUserIdAndMonthAndYear(Long userId, Integer month, Integer year);

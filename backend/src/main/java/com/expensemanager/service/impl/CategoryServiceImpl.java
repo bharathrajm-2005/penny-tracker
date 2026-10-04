@@ -14,6 +14,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of CategoryService.
+ * Handles logic for retrieving, creating, and modifying categories for the logged-in user.
+ */
 @Service
 @AllArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
@@ -22,6 +26,12 @@ public class CategoryServiceImpl implements CategoryService {
     private SecurityUtil securityUtil;
     private EntityMapper mapper;
 
+    /**
+     * Saves a new custom category tied specifically to the logged-in user.
+     * 
+     * @param categoryDto The details of the category.
+     * @return The saved category.
+     */
     @Override
     public CategoryDto createCategory(CategoryDto categoryDto) {
         User user = securityUtil.getLoggedInUser();

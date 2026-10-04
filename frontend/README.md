@@ -1,32 +1,60 @@
-# React + TypeScript + Vite
+# Penny Tracker - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Welcome to the frontend application for **Penny Tracker** (Smart Expense Manager). This is a modern, responsive single-page application designed to help users track their expenses, manage budgets, and visualize their financial data.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** [React 19](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Routing:** [React Router](https://reactrouter.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Charts:** [Recharts](https://recharts.org/)
 
-## React Compiler
+## 🛠️ Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the Oxlint configuration
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine (v18 or higher is recommended).
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Installation
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+1. Navigate to the frontend directory (if you aren't already there):
+   ```bash
+   cd frontend
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Locally
+
+To start the local Vite development server, run:
+
+```bash
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+The application will typically be available at `http://localhost:5173`. 
+
+> **Note:** For the application to function correctly, make sure the Java Spring Boot backend is also running simultaneously!
+
+### Building for Production
+
+To create an optimized, production-ready build, run:
+
+```bash
+npm run build
+```
+
+The compiled assets will be output to the `dist` directory.
+
+## 📁 Project Structure
+
+- `src/components/` - Reusable React components (UI elements, Layouts).
+- `src/pages/` - Main view components corresponding to routes (Dashboard, Login, etc.).
+- `src/context/` - React contexts (e.g., AuthContext) for global state management.
+- `src/services/` - API integration and HTTP requests to the backend.

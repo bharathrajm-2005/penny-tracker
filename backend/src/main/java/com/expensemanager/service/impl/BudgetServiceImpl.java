@@ -18,6 +18,10 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of BudgetService. 
+ * Handles business logic surrounding budget creation and validation.
+ */
 @Service
 @AllArgsConstructor
 public class BudgetServiceImpl implements BudgetService {
@@ -28,6 +32,13 @@ public class BudgetServiceImpl implements BudgetService {
     private SecurityUtil securityUtil;
     private EntityMapper mapper;
 
+    /**
+     * Creates or updates a budget for the currently logged-in user.
+     * Ties the budget to an optional category and handles authorization checks.
+     * 
+     * @param budgetDto The budget details
+     * @return The persisted budget
+     */
     @Override
     public BudgetDto setBudget(BudgetDto budgetDto) {
         User user = securityUtil.getLoggedInUser();

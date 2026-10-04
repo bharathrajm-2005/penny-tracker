@@ -9,6 +9,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * Represents a financial expense logged by a user.
+ * Tracks the amount, date, payment method, category, and timestamps of the transaction.
+ */
 @Entity
 @Table(name = "expenses")
 @Getter

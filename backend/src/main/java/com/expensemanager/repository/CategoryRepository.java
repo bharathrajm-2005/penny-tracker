@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Repository interface for CRUD operations on Category entities.
+ * Supports retrieving both global default categories and user-specific custom categories.
+ */
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     List<Category> findByUserIdOrUserIsNull(Long userId);

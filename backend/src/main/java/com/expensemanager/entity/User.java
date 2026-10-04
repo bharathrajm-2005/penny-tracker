@@ -6,6 +6,10 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+/**
+ * Represents a registered user of the Expense Tracker platform.
+ * Stores authentication details (email, hashed password) and user preferences (like currency).
+ */
 @Entity
 @Table(name = "users")
 @Getter
